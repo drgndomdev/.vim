@@ -1,5 +1,4 @@
 set nocompatible " no vi compability
-
 set hlsearch " highlight search
 set ic
 set autoindent
@@ -26,18 +25,28 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-airline/vim-airline'
+Plug 'mattn/emmet-vim'
 Plug 'frazrepo/vim-rainbow'
 " Plug 'vim-scripts/taglist.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 call plug#end()
 
 let g:rainbow_active = 1 " rainbow global activation
+let g:gitgutter_terminal_reports_focus=0 " init gitgutter
+let g:airline#extensions#tabline#enabled = 1 " enable tabs
+let g:airline#extensions#tabline#formatter = 'default' " Custom Line formatter
+
 
 " Custom NERDTree Key Binds
 nnoremap <C-q> :NERDTreeFocus<CR>	
 nnoremap <C-s> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR> 
+nnoremap <C-a> :IndentGuidesToggle<CR>
+inoremap <silent><expr> <C-@> coc#refresh()
 
 autocmd VimEnter * NERDTree | wincmd p " Start NERDTree when openning Vim
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
