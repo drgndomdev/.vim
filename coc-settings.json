@@ -1,13 +1,8 @@
 {
-<<<<<<< HEAD
     "languageserver": {
         "kotlin": {
-            "command": "/server/build/install/server/bin/kotlin-language-server",
+            "command": "[path to cloned language server]/server/build/install/server/bin/kotlin-language-server",
             "filetypes": ["kotlin"]
         }
     }
-=======
-	"suggest.enablePreselect": true,
-	"suggest.enablePreview": true,
->>>>>>> fdd4eb5712b0b70043338ad819fd7ca425fd559c
 }
