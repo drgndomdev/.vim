@@ -1,7 +1,11 @@
 {
     "languageserver": {
         "kotlin": {
+<<<<<<< HEAD
             "command": "server/build/install/server/bin/kotlin-language-server",
+=======
+            "command": "[path to cloned language server]/server/build/install/server/bin/kotlin-language-server",
+>>>>>>> 54db7b747ed2c097d5e93807c4f58cfcdd1bcf1d
             "filetypes": ["kotlin"]
         }
     }
