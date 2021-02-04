@@ -4,7 +4,7 @@ set ic
 set autoindent
 set mousehide 
 set number " Set Line Numeration
-set history=256
+set history=512
 set showcmd
 set tabstop=4
 set hidden
@@ -30,26 +30,34 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'frazrepo/vim-rainbow'
+" Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let g:rainbow_active = 1 " rainbow global activation
 let g:gitgutter_terminal_reports_focus=0 " init gitgutter
 let g:airline#extensions#tabline#enabled = 1 " enable tabs
 let g:airline#extensions#tabline#formatter = 'default' " Custom Line formatter
+let g:LanguageClient_serverCommands = {
+	\ 'kotlin' : ['']}
 
 
 " Custom NERDTree Key Binds
 nnoremap <C-q> :NERDTreeFocus<CR>	
 nnoremap <C-s> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR> 
-nnoremap <C-a> :IndentGuidesToggle<CR>
+nnoremap <C-z> :IndentGuidesToggle<CR>
 inoremap <silent><expr> <C-@> coc#refresh()
 
 autocmd VimEnter * NERDTree | wincmd p " Start NERDTree when openning Vim
