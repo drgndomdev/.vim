@@ -11,6 +11,7 @@ set hidden
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+set encoding=UTF-8
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -38,20 +39,50 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'frazrepo/vim-rainbow'
-" Plug 'vim-scripts/taglist.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
+" loading the plugin
+let g:webdevicons_enable = 1
+" adding the flags to NERDTree
+let g:webdevicons_enable_nerdtree = 1
+" adding to vim-airline's tabline
+let g:webdevicons_enable_airline_tabline = 1
+" adding the column to vimfiler
+let g:webdevicons_enable_vimfiler = 1
+" Force extra padding in NERDTree so that the filetype icons line up vertically
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:airline_theme='papercolor'
 let g:rainbow_active = 1 " rainbow global activation
 let g:gitgutter_terminal_reports_focus=0 " init gitgutter
 let g:airline#extensions#tabline#enabled = 1 " enable tabs
 let g:airline#extensions#tabline#formatter = 'default' " Custom Line formatter
+let g:python_highlight_all = 1
 let g:LanguageClient_serverCommands = {
 	\ 'kotlin' : ['']}
-
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ } " NerdTree custom signs
+let g:PaperColor_Theme_Options = { 
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1
+  \     }
+  \   }
+  \ }  
 
 " Custom NERDTree Key Binds
 nnoremap <C-q> :NERDTreeFocus<CR>	
@@ -64,16 +95,6 @@ autocmd VimEnter * NERDTree | wincmd p " Start NERDTree when openning Vim
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif " Close NERDTree if is the last window
 
-" VundleVim Plugin
-" syntax on 
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" Plugin 'neoclide/coc-lists'
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'NLKNguyen/papercolor-theme'
-" call vundle#end()
-" filetype plugin indent on
-"
 set background=dark
 colorscheme PaperColor
 set laststatus=2
