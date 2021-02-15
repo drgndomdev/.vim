@@ -1,3 +1,2 @@
 cd $Home
-mkdir -p ~/.vim/pack/kite/start/kite
-git clone https://github.com/kiteco/vim-plugin.git ~/.vim/pack/kite/start/kite/
+bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
