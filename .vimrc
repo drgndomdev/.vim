@@ -44,6 +44,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'hugolgst/vimsence'
 call plug#end()
 
 " loading the plugin
@@ -83,6 +84,14 @@ let g:PaperColor_Theme_Options = {
   \     }
   \   }
   \ }  
+let g:vimsence_client_id = '439476230543245312'
+let g:vimsence_small_text = 'Vim'
+let g:vimsence_small_image = 'Vim'
+let g:vimsence_editing_details = 'Editing: {}'
+let g:vimsence_editing_state = 'Working on: {}'
+let g:vimsence_file_explorer_text = 'In NERDTree'
+let g:vimsence_file_explorer_details = 'Looking for files'
+let g:vimsence_custom_icons = {'filetype': 'iconname'}
 
 " Custom NERDTree Key Binds
 nnoremap <C-q> :NERDTreeFocus<CR>	
