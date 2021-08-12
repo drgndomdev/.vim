@@ -43,8 +43,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'hugolgst/vimsence'
+#Plug 'NLKNguyen/papercolor-theme'
+#Plug 'hugolgst/vimsence'
 call plug#end()
 
 " loading the plugin
